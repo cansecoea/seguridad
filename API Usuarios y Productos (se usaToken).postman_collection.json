@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "258ad455-b67a-435b-9e18-e2a67e874140",
+		"name": "API Usuarios y Productos (se usaToken)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"description": "",
+			"item": [
+				{
+					"name": "Alta de usuarios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\" : \"deadepool\",\n\t\"email\" : \"deadepool@gmail.com\",\n\t\"password\" : \"1234\",\n\t\"role\": \"ROLE_USER\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3978/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login de usuarios (se obtiene token)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\":\"deadpool@gmail.com\",\n     \"password\" : \"cacahuate\",\n\t\"token\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3978/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrado de usuarios",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NGM5ZmE4NGVjODEwNDgxNzlhMjAiLCJ1c2VybmFtZSI6InN1cGVybWFuIiwiZW1haWwiOiJzdXBlcm1hbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRMT3pZQi9oVlExS3VGb1BwODREaFB1bG9EM3dtdWxVVDFScTFEd3hnU3N2bzh1WTVBNmdrNiIsImFjdGl2ZSI6dHJ1ZSwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE1MjgzODU0ODksImV4cCI6MTUzMDk3NzQ4OX0.n3i4nRqphON3wnjlHAJuE4JTDeowZBlNquiNYr4eEXo"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/user/delete/5b195eedbdaa8d171c60d09a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"5b195eedbdaa8d171c60d09a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NjRhYmI5ZjQyYzE0MWM0Zjc4M2QiLCJ1c2VybmFtZSI6ImRlYWRlcG9vbCIsImVtYWlsIjoiZGVhZGVwb29sQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGtFU2FhMWlrUmFwdm8xeEJCRkIucWVtSmFzVDdDLkMzcm40MGpCMXByWDZSYmNMTlFJUksuIiwiYWN0aXZlIjp0cnVlLCJyb2xlIjoiUk9MRV9VU0VSIiwiaWF0IjoxNTI4MzkzMTgzLCJleHAiOjE1MzA5ODUxODN9.e0nKwaUTb7mpqH9gZ5ULupradoVQ6J5aHqqb7qxi-sU"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/user/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de un usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NWYyZWJkYWE4ZDE3MWM2MGQwOWIiLCJ1c2VybmFtZSI6ImJhdG1hbiIsImVtYWlsIjoiYmF0bWFubEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR1Lmd0ZHZocXh3ckdrY01PU2J2UWhlY0lVWUY3cDhFTWljbEh4eE9kLjFqd1Y2S3pyZkZueSIsImFjdGl2ZSI6dHJ1ZSwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE1MjgzOTQ3ODYsImV4cCI6MTUzMDk4Njc4Nn0.ZlFur2PRrbiFc96GIX5q2c0znin5Q2pJTYtx2-L0y4E"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/user/user/5b195f2ebdaa8d171c60d09b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"user",
+								"5b195f2ebdaa8d171c60d09b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualiza usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NWYyZWJkYWE4ZDE3MWM2MGQwOWIiLCJ1c2VybmFtZSI6ImJhdG1hbiIsImVtYWlsIjoiYmF0bWFubEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR1Lmd0ZHZocXh3ckdrY01PU2J2UWhlY0lVWUY3cDhFTWljbEh4eE9kLjFqd1Y2S3pyZkZueSIsImFjdGl2ZSI6dHJ1ZSwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE1Mjg0MDA2NzUsImV4cCI6MTUzMDk5MjY3NX0.1wSUkKkQ-DrXkV7PtFOUkZAAz2paCx9N3FiqDLHqQTU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\" : \"deadpool\",\n\t\"email\" : \"deadpool@gmail.com\",\n\t\"password\" : \"cacahuate\",\n\t\"role\": \"ROLE_USER\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3978/api/user/user/5b1964abb9f42c141c4f783d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"user",
+								"user",
+								"5b1964abb9f42c141c4f783d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"description": "",
+			"item": [
+				{
+					"name": "Alta de productos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NWYyZWJkYWE4ZDE3MWM2MGQwOWIiLCJ1c2VybmFtZSI6ImJhdG1hbiIsImVtYWlsIjoiYmF0bWFubEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR1Lmd0ZHZocXh3ckdrY01PU2J2UWhlY0lVWUY3cDhFTWljbEh4eE9kLjFqd1Y2S3pyZkZueSIsImFjdGl2ZSI6dHJ1ZSwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE1Mjg0MDA2NzUsImV4cCI6MTUzMDk5MjY3NX0.1wSUkKkQ-DrXkV7PtFOUkZAAz2paCx9N3FiqDLHqQTU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Agua mineral\",\n\t\"codebar\": \"XXXXX\",\n\t\"cost\":\"12.00\",\n\t\"brand\":\"Peñafiel\",\n\t\"active\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3978/api/product/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"product",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualiza producto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NWYyZWJkYWE4ZDE3MWM2MGQwOWIiLCJ1c2VybmFtZSI6ImJhdG1hbiIsImVtYWlsIjoiYmF0bWFubEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR1Lmd0ZHZocXh3ckdrY01PU2J2UWhlY0lVWUY3cDhFTWljbEh4eE9kLjFqd1Y2S3pyZkZueSIsImFjdGl2ZSI6dHJ1ZSwicm9sZSI6IlJPTEVfQURNSU4iLCJpYXQiOjE1Mjg0MDA2NzUsImV4cCI6MTUzMDk5MjY3NX0.1wSUkKkQ-DrXkV7PtFOUkZAAz2paCx9N3FiqDLHqQTU"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Cola Zero\",\n\t\"codebar\": \"YYYYYY\",\n\t\"cost\":\"10.00\",\n\t\"brand\":\"Coca-Cola\",\n\t\"active\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3978/api/product/product/5b19b25df8e516076c2010fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"product",
+								"product",
+								"5b19b25df8e516076c2010fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrado de productos",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjE5NjRhYmI5ZjQyYzE0MWM0Zjc4M2QiLCJ1c2VybmFtZSI6ImRlYWRlcG9vbCIsImVtYWlsIjoiZGVhZGVwb29sQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGtFU2FhMWlrUmFwdm8xeEJCRkIucWVtSmFzVDdDLkMzcm40MGpCMXByWDZSYmNMTlFJUksuIiwiYWN0aXZlIjp0cnVlLCJyb2xlIjoiUk9MRV9VU0VSIiwiaWF0IjoxNTI4NDAwNzE5LCJleHAiOjE1MzA5OTI3MTl9.-IpeB1o07ArCSFmuaNGFcVrBeyZo-NgXNNtM8Rm-gV8"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/product/delete/5b19b4d2f8e516076c2010fd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"5b19b4d2f8e516076c2010fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/product/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"product",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de un producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3978/api/product/product/5b19b4d2f8e516076c2010fd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3978",
+							"path": [
+								"api",
+								"product",
+								"product",
+								"5b19b4d2f8e516076c2010fd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
